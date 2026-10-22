@@ -1,0 +1,9 @@
+{
+    "experiment": "progress_reward",
+    "reward_strategy": "progress_reward",
+    "training_steps": 1000000,
+    "random_seed": 42,
+    "started_at": "2026-10-14T11:20:32.552436+00:00",
+    "completed_at": "2026-10-14T11:49:20.701430+00:00",
+    "model_path": "models\\progress_reward\\final_model"
+}

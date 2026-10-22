@@ -1,0 +1,9 @@
+{
+    "experiment": "time_penalty",
+    "reward_strategy": "time_penalty",
+    "training_steps": 1000000,
+    "random_seed": 42,
+    "started_at": "2026-10-14T09:20:20.578993+00:00",
+    "completed_at": "2026-10-14T09:47:07.433345+00:00",
+    "model_path": "models\\time_penalty\\final_model"
+}

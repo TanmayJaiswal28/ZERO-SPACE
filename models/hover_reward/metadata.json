@@ -1,0 +1,9 @@
+{
+    "experiment": "hover_reward",
+    "reward_strategy": "hover_reward",
+    "training_steps": 1000000,
+    "random_seed": 42,
+    "started_at": "2026-10-14T09:47:58.451267+00:00",
+    "completed_at": "2026-10-14T11:18:58.441999+00:00",
+    "model_path": "models\\hover_reward\\final_model"
+}

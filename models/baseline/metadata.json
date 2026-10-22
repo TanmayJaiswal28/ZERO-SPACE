@@ -1,0 +1,9 @@
+{
+    "experiment": "baseline",
+    "reward_strategy": "baseline",
+    "training_steps": 1000000,
+    "random_seed": 42,
+    "started_at": "2026-10-14T08:56:16.607096+00:00",
+    "completed_at": "2026-10-14T09:18:04.703813+00:00",
+    "model_path": "models\\baseline\\final_model"
+}
