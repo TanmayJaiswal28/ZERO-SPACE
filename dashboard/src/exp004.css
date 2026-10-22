@@ -1,0 +1,298 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.zero004 {
+  min-height: 100vh;
+  background: #07101b;
+  color: #edf4fa;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.zero004-header {
+  height: 70px;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #2b3c4d;
+  background: #0b1521;
+}
+
+.zero004-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.zero004-brand strong {
+  font-size: 17px;
+  letter-spacing: 3px;
+}
+
+.zero004-brand span,
+.zero004-connection {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  color: #99b1c5;
+}
+
+.zero004-connection {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-align: right;
+}
+
+.zero004-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d87b66;
+  flex-shrink: 0;
+}
+
+.zero004-dot.online {
+  background: #63d9b5;
+  box-shadow: 0 0 12px #63d9b5;
+}
+
+.zero004-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  height: calc(100vh - 70px);
+}
+
+.zero004-viewport {
+  position: relative;
+  min-height: 550px;
+  overflow: hidden;
+}
+
+.zero004-viewport > div:first-child {
+  width: 100%;
+  height: 100%;
+}
+
+.zero004-viewport canvas {
+  display: block;
+}
+
+.zero004-flight {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  pointer-events: none;
+}
+
+.zero004-flight span,
+.zero004-label {
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  color: #8fb4d0;
+}
+
+.zero004-flight h2 {
+  margin: 12px 0;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+.zero004-flight p {
+  font-size: 11px;
+  color: #a7c1d5;
+}
+
+
+/* ZERO SPACE — CINEMATIC MISSION CONTROL */
+
+.zero004 {
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(38, 72, 112, 0.15),
+      transparent 55%
+    ),
+    #05080d !important;
+}
+
+.zero004 h1 {
+  font-weight: 600;
+  letter-spacing: 0.035em;
+}
+
+.zero004 canvas {
+  display: block;
+  outline: none;
+}
+
+.zero004 button {
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.zero004 button:hover {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.zero004 aside > div {
+  backdrop-filter: blur(16px);
+}
+
+@media (max-width: 900px) {
+  .zero004 > div:nth-of-type(1) {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zero004 button {
+    transition: none;
+  }
+}
+
+.zero004-cameras {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  display: flex;
+  gap: 7px;
+}
+
+.zero004-cameras button {
+  background: #132436;
+  border: 1px solid #3b5368;
+  padding: 11px 12px;
+  color: #bdd0df;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.zero004-cameras button.active {
+  background: #2c536e;
+  border-color: #86bde2;
+  color: white;
+}
+
+.zero004-help {
+  position: absolute;
+  left: 25px;
+  bottom: 23px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #94adc1;
+  pointer-events: none;
+}
+
+.zero004-warning {
+  position: absolute;
+  bottom: 65px;
+  left: 25px;
+  right: 25px;
+  max-width: 650px;
+  background: rgba(52, 35, 24, 0.94);
+  border: 1px solid #a47a49;
+  color: #f1c697;
+  padding: 13px;
+  font-size: 11px;
+  line-height: 1.6;
+  pointer-events: none;
+}
+
+.zero004-panel {
+  background: #101d2b;
+  border-left: 1px solid #2b3c4d;
+  overflow-y: auto;
+}
+
+.zero004-section {
+  padding: 22px;
+  border-bottom: 1px solid #293b4b;
+}
+
+.zero004-label {
+  display: block;
+  margin-bottom: 17px;
+}
+
+.zero004-altitude {
+  font-size: 42px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.zero004-altitude small {
+  font-size: 16px;
+  margin-left: 7px;
+  color: #a6bfd3;
+}
+
+.zero004-progress {
+  height: 6px;
+  margin-top: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #2a4254;
+}
+
+.zero004-progress > div {
+  height: 100%;
+  background: #79bce7;
+  transition: width 0.25s;
+}
+
+.zero004-subtext {
+  font-size: 10px;
+  color: #8ca6bc;
+  line-height: 1.7;
+}
+
+.zero004-metric {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 11px 0;
+  border-bottom: 1px solid #2a3c4d;
+  font-size: 11px;
+}
+
+.zero004-metric span {
+  color: #9fb5c7;
+}
+
+.zero004-metric strong {
+  color: #edf4fa;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .zero004-layout {
+    display: block;
+    height: auto;
+  }
+
+  .zero004-viewport {
+    height: 65vh;
+    min-height: 480px;
+  }
+
+  .zero004-panel {
+    border-left: none;
+  }
+
+  .zero004-cameras {
+    top: 115px;
+    left: 25px;
+    right: auto;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,512 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: Inter, sans-serif;
+  color: #e8edf3;
+  background: #06090e;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button, select {
+  font: inherit;
+}
+
+.mission-control {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #06090e;
+}
+
+.topbar {
+  height: 86px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #202a35;
+  background: #0b1017;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.brand-symbol {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #7b8b9d;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -4px;
+  padding-right: 4px;
+}
+
+.brand h1 {
+  font-size: 19px;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+.brand p {
+  color: #7f8c9c;
+  font: 10px "DM Mono", monospace;
+  letter-spacing: 1px;
+  margin: 6px 0 0;
+}
+
+.header-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-center strong {
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+
+.eyebrow, .field-label {
+  font: 10px "DM Mono", monospace;
+  letter-spacing: 1.5px;
+  color: #8290a0;
+}
+
+.connection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #8b97a5;
+  font: 11px "DM Mono", monospace;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #78818c;
+}
+
+.online .status-dot {
+  background: #43dca0;
+  box-shadow: 0 0 12px #43dca066;
+}
+
+.online {
+  color: #43dca0;
+}
+
+.dashboard-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 285px minmax(0, 1fr) 285px;
+  min-height: 650px;
+}
+
+.sidebar {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #0a0f16;
+}
+
+.sidebar:first-child {
+  border-right: 1px solid #202a35;
+}
+
+.sidebar:last-child {
+  border-left: 1px solid #202a35;
+}
+
+.panel {
+  border: 1px solid #25303c;
+  background: #0d141d;
+  padding: 18px;
+  border-radius: 4px;
+}
+
+.panel-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font: 11px "DM Mono", monospace;
+  letter-spacing: 1.1px;
+  color: #a8b8c9;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #26303b;
+  margin-bottom: 14px;
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #1a2530;
+}
+
+.metric:last-child {
+  border-bottom: none;
+}
+
+.metric span {
+  color: #8493a4;
+  font-size: 11px;
+}
+
+.metric strong {
+  color: #e9f1f8;
+  font: 12px "DM Mono", monospace;
+  white-space: nowrap;
+}
+
+.metric small {
+  font-size: 10px;
+  color: #6f8193;
+}
+
+.viewport {
+  position: relative;
+  min-height: 650px;
+  overflow: hidden;
+  background: #060b12;
+}
+
+.viewport canvas {
+  position: absolute !important;
+  inset: 0;
+}
+
+.viewport-top,
+.viewport-bottom {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  color: #8ea2b5;
+  font: 10px "DM Mono", monospace;
+  letter-spacing: 1px;
+}
+
+.viewport-top {
+  top: 24px;
+}
+
+.viewport-bottom {
+  bottom: 24px;
+}
+
+.viewport-bottom span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.viewport-overlay {
+  position: absolute;
+  z-index: 2;
+  left: 24px;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  pointer-events: none;
+}
+
+.viewport-overlay strong {
+  font: 24px "DM Mono", monospace;
+  letter-spacing: -1px;
+}
+
+.viewport-overlay > span:last-child {
+  font: 11px "DM Mono", monospace;
+  color: #7d90a4;
+}
+
+.engine-state {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 10px 0;
+}
+
+.engine-light {
+  width: 9px;
+  height: 9px;
+  background: #38bdf8;
+  border-radius: 50%;
+  box-shadow: 0 0 14px #38bdf8aa;
+}
+
+.engine-state div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.engine-state small {
+  color: #7c8b9b;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.engine-state strong {
+  font: 12px "DM Mono", monospace;
+}
+
+.muted {
+  color: #7f90a2;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.field-label {
+  display: block;
+  margin: 16px 0 10px;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  background: #101b27;
+  border: 1px solid #304154;
+  color: #e8edf3;
+  outline: none;
+  font-size: 11px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.controls button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 12px 8px;
+  background: #172433;
+  color: #e6edf5;
+  border: 1px solid #35495d;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+button:hover:not(:disabled) {
+  border-color: #6a9dc6;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.speed-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+.speed-options button {
+  padding: 10px 0;
+  color: #8ea0b2;
+  background: #111b26;
+  border: 1px solid #293847;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.speed-options button.selected {
+  color: #ffffff;
+  background: #244663;
+  border-color: #4c91c3;
+}
+
+.history-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #1b2834;
+  font: 11px "DM Mono", monospace;
+}
+
+.history-row span {
+  color: #8493a4;
+}
+
+.footer {
+  min-height: 46px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  background: #0b1017;
+  border-top: 1px solid #202a35;
+  color: #6f8193;
+  font: 9px "DM Mono", monospace;
+  letter-spacing: 1px;
+}
+
+.error-banner {
+  padding: 12px 24px;
+  color: #ffb3b3;
+  background: #3b161b;
+  font-size: 12px;
+}
+
+@media (max-width: 1100px) {
+  .dashboard-grid {
+    grid-template-columns: 240px minmax(0, 1fr);
+  }
+
+  .sidebar:last-child {
+    grid-column: 1 / -1;
+    border-top: 1px solid #202a35;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .header-center {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    padding: 0 16px;
+  }
+
+  .dashboard-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .viewport {
+    min-height: 480px;
+    order: -1;
+  }
+
+  .sidebar:last-child {
+    display: flex;
+  }
+
+  .footer {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+}
+
+/* ZERO SPACE — Flight Recorder */
+
+.flight-recorder {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.recorder-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #a8b8c9;
+  font: 10px "DM Mono", monospace;
+  letter-spacing: 1px;
+}
+
+.recorder-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.recorder-controls button {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #344456;
+  background: #16212d;
+  color: #e8edf3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font: 10px "DM Mono", monospace;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+}
+
+.recorder-controls .record-button {
+  border-color: #743b43;
+  background: #25171d;
+}
+
+.recorder-controls .stop-button {
+  border-color: #b44d59;
+  color: #ffb3bb;
+}
+
+.recorder-controls .download-button {
+  border-color: #41617a;
+}
+
+.recording-status {
+  color: #ff6b78;
+  font: 10px "DM Mono", monospace;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.recording-dot {
+  width: 7px;
+  height: 7px;
+  background: #ff4545;
+  border-radius: 50%;
+  animation: recording-pulse 1s infinite;
+}
+
+.recorder-error {
+  color: #ff8c96;
+  font-size: 11px;
+}
+
+.cinematic-toggle {
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px;
+  background: #172433;
+  border: 1px solid #35495d;
+  color: #e8edf3;
+  font: 10px "DM Mono", monospace;
+  cursor: pointer;
+}
+
+@keyframes recording-pulse {
+  50% {
+    opacity: 0.25;
+  }
+}

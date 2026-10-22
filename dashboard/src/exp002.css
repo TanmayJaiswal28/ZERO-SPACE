@@ -1,0 +1,102 @@
+
+.exp002-root {
+  background: #0a101a;
+  color: #e5ebf1;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.exp002-root header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 26px;
+  border-bottom: 1px solid #33404f;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.exp002-root header span {
+  color: #73d3be;
+}
+
+.exp002-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  height: calc(100vh - 62px);
+}
+
+.exp002-scene {
+  position: relative;
+  min-height: 600px;
+}
+
+.exp002-scene canvas {
+  position: absolute !important;
+  inset: 0;
+}
+
+.exp002-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  pointer-events: none;
+  font-size: 12px;
+  line-height: 1.9;
+  letter-spacing: 1px;
+}
+
+.exp002-sidebar {
+  padding: 20px;
+  overflow-y: auto;
+  border-left: 1px solid #33404f;
+  background: #101a26;
+}
+
+.exp002-sidebar h3 {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #93b1c8;
+  margin: 10px 0 18px;
+}
+
+.exp002-metric {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #2b3948;
+  font-size: 12px;
+}
+
+.exp002-metric span {
+  color: #a1b1c1;
+}
+
+.exp002-metric strong {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.exp002-note {
+  font-size: 11px;
+  color: #90a2b4;
+  line-height: 1.6;
+  margin-top: 25px;
+}
+
+@media (max-width: 850px) {
+  .exp002-grid {
+    display: block;
+    height: auto;
+  }
+
+  .exp002-scene {
+    height: 65vh;
+    min-height: 400px;
+  }
+
+  .exp002-sidebar {
+    border-left: 0;
+  }
+}
